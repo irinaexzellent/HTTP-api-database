@@ -24,9 +24,9 @@ POSTGRES_DB=имя базы данных
 ```
 [postgresql]
 host=db
-database=имя базы данных(должно сопадать с POSTGRES_DB в .env-postgresql)
-user=имя пользователя базы данных(должно сопадать с POSTGRES_USER в .env-postgresql)
-password=пароль пользователя базы данных(должно сопадать с POSTGRES_PASSWORD в .env-postgresql)
+database=имя базы данных(должно совпадать с POSTGRES_DB в .env-postgresql)
+user=имя пользователя базы данных(должно совпадать с POSTGRES_USER в .env-postgresql)
+password=пароль пользователя базы данных(должно совпадать с POSTGRES_PASSWORD в .env-postgresql)
 port=5432
 ```
 5. Перейти в папку с файлом docker-compose.yml (HTTP-api-database) и выполнить:
@@ -37,15 +37,15 @@ docker-compose up -d
 ```
 При регистрации в connection сервера указать host name - db (имя контенейра базы данных) 
 ```
-Код создания базы данных и внессения информации в таблицы предствален - HTTP-api-database/API/SQL.sql
+Код создания базы данных и внесения информации в таблицы представлен - HTTP-api-database/API/SQL.sql
 
 7. Перезапустить контейнер flask_web:
 ```
 ```
 8. Проверить результаты работы по следующим адресам:
-http://127.0.0.1:5000/api/v1/category-products
-http://127.0.0.1:5000/api/v1/pairs
-http://127.0.0.1:5000/api/v1/category
+http://127.0.0.1:5000/api/v1/category-products - список всех продуктов с их категориями
+http://127.0.0.1:5000/api/v1/pairs - список всех пар «Имя продукта – Имя категории»
+http://127.0.0.1:5000/api/v1/category - список категорий с продуктами
 
 
 Для остановки и удаления контейнеров, удаления volumes и образов:
